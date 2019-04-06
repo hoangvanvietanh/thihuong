@@ -4,25 +4,22 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.java.web.entity.ThiSinh;
-import com.java.web.services.ThiSinhServices;
+import com.java.web.services.ThiSinhService;
 
 @Controller
-@RequestMapping("/thisinh")
+@RequestMapping(value = "/admin")
 public class ThiSinhController {
-	
 	@Autowired
-	private ThiSinhServices thiSinhServices;
+	private ThiSinhService thiSinhService;
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public String create(Model model,ModelMap modelMap) {
-		List<ThiSinh> dsThiSinh = thiSinhServices.dsThiSinh();
-		model.addAttribute("dsThiSinh", dsThiSinh);
-		return "TrangChu";
+	@RequestMapping(value = "/thisinh", method = RequestMethod.GET)
+	public String thiSinhList(ModelMap map) {
+		map.addAttribute("dsThiSinh", thiSinhService.findAll());
+		return "ThiSinh";
 	}
 }

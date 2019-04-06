@@ -4,14 +4,11 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -21,7 +18,7 @@ public class ThiSinh {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="MaThiSinh")
-	private Long maThiSinh;
+	private int maThiSinh;
 	
 	@Column(name="HoTen")
 	private String hoTen;
@@ -36,11 +33,11 @@ public class ThiSinh {
 	@JoinColumn(name="email")
 	private TaiKhoan taiKhoan;
 
-	public Long getMaThiSinh() {
+	public int getMaThiSinh() {
 		return maThiSinh;
 	}
 
-	public void setMaThiSinh(Long maThiSinh) {
+	public void setMaThiSinh(int maThiSinh) {
 		this.maThiSinh = maThiSinh;
 	}
 

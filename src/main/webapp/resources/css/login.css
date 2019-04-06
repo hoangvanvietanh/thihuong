@@ -123,6 +123,10 @@ body {
     color: #777;
 }
 
+.form-label-group intput {
+	text-align: center;
+}
+
 .btn-google {
     color: white;
     background-color: #ea4335;

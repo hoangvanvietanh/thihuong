@@ -11,12 +11,24 @@ import com.java.web.entity.ThiSinh;
 
 @Service
 @Transactional
-public class ThiSinhServices {
+public class ThiSinhService {
 
 	@Autowired
 	ThiSinhDAO thiSinhDAO;
 	
-	public List<ThiSinh> dsThiSinh(){
+	public List<ThiSinh> findAll(){
 		return thiSinhDAO.findAll();
+	}
+	
+	public ThiSinh findById(int maThiSinh) {
+		return thiSinhDAO.findById(maThiSinh);
+	}
+	
+	public void addThiSinh(ThiSinh thiSinh) {
+		thiSinhDAO.addThiSinh(thiSinh);
+	}
+	
+	public void updateThiSinh(ThiSinh thiSinh) {
+		thiSinhDAO.updateThiSinh(thiSinh);
 	}
 }

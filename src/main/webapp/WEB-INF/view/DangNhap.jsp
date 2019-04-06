@@ -11,16 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Đăng nhập</title>
-    <link rel="stylesheet"
-	href="<spring:url value='/resources/css/bootstrap.min.css" rel="stylesheet'/>" id="bootstrap-css">
-	<link rel="stylesheet"
-	href="<spring:url value='/resources/css/login.css'/>">
-	<script src="<spring:url value='/resources/js/jquery-3.3.1.min.js'/>"
-		type="text/javascript"></script>
-	<script src="<spring:url value='/resources/js/bootstrap.min.js'/>"
-		type="text/javascript"></script>
-		<script src="<spring:url value='/resources/js/login.js'/>"
-		type="text/javascript"></script>
+    <link rel="stylesheet" href="<spring:url value='/resources/css/bootstrap.min.css" rel="stylesheet'/>" id="bootstrap-css">
+	<link rel="stylesheet" href="<spring:url value='/resources/css/login.css'/>">
+	<script src="<spring:url value='/resources/js/jquery-3.3.1.min.js'/>" type="text/javascript"></script>
+	<script src="<spring:url value='/resources/js/bootstrap.min.js'/>" type="text/javascript"></script>
+		<script src="<spring:url value='/resources/js/login.js'/>" type="text/javascript"></script>
 </head>
 
 <body>
@@ -41,16 +36,18 @@
                                 <a href="#" class="btn btn-outline-primary" id="register-form-link">Đăng ký</a>
                             </div>
                         </div>
-                        <form id="login-form" class="form-signin" style="display: block;">
+                        <form action="login" method="post" id="login-form" class="form-signin" style="display: block;">
                             <div class="form-label-group">
-                                <input type="email" id="loginEmail" class="form-control" placeholder="Địa chỉ email"
+                                <input type="text" id="loginEmail" name="email" class="form-control" placeholder="Địa chỉ email"
                                     required>
+                                 <c:if test="${messageEmail}"><div style="color: red">Email không đúng</div></c:if>
                                 <label for="loginEmail">Địa chỉ email</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="password" id="loginPassword" class="form-control" placeholder="Mật khẩu"
+                                <input type="password" id="loginPassword" name="matKhau" class="form-control" placeholder="Mật khẩu"
                                     required>
+                                 <c:if test="${messagePass}"><div style="color: red">Mật khẩu không đúng</div></c:if>
                                 <label for="loginPassword">Mật khẩu</label>
                             </div>
 
@@ -70,14 +67,14 @@
 
                         <form id="register-form" class="form-signin" style="display: none;">
                             <div class="form-label-group">
-                                <input type="text" id="regLastName" class="form-control" placeholder="Nhập họ" required>
-                                <label for="regLastName">Nhập họ</label>
+                                <input type="text" id="regFullName" class="form-control" placeholder="Nhập họ tên" required>
+                                <label for="regFullName">Nhập họ tên</label>
                             </div>
 
                             <div class="form-label-group">
-                                <input type="text" id="regFirstName" class="form-control" placeholder="Nhập tên"
+                                <input type="date" id="regBirthday" class="form-control" placeholder="Nhập ngày sinh"
                                     required>
-                                <label for="regFirstName">Nhập tên</label>
+                                <label for="regBirthday">Ngày sinh</label>
                             </div>
 
                             <div class="form-label-group">
