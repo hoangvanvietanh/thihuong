@@ -6,17 +6,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TaiKhoan")
+@Table(name="taikhoan")
 public class TaiKhoan {
 	@Id
 	@Column(name="email")
-	String email;
+	private String email;
 	
 	@Column(name="matkhau")
-	String matKhau;
+	private String matKhau;
 	
 	@Column(name="quyen")
-	int quyen;
+	private String quyen;
 
 	public String getEmail() {
 		return email;
@@ -34,11 +34,13 @@ public class TaiKhoan {
 		this.matKhau = matKhau;
 	}
 
-	public int getQuyen() {
+	public String getQuyen() {
 		return quyen;
 	}
 
-	public void setQuyen(int quyen) {
+	public void setQuyen(String quyen) {
 		this.quyen = quyen;
 	}
+
+	
 }

@@ -4,9 +4,14 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -14,8 +19,9 @@ import javax.persistence.Table;
 public class ThiSinh {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="MaThiSinh")
-	private int maThiSinh;
+	private Long maThiSinh;
 	
 	@Column(name="HoTen")
 	private String hoTen;
@@ -25,12 +31,16 @@ public class ThiSinh {
 	
 	@Column(name="SDT")
 	private String SDT;
+	
+	@OneToOne
+	@JoinColumn(name="email")
+	private TaiKhoan taiKhoan;
 
-	public int getMaThiSinh() {
+	public Long getMaThiSinh() {
 		return maThiSinh;
 	}
 
-	public void setMaThiSinh(int maThiSinh) {
+	public void setMaThiSinh(Long maThiSinh) {
 		this.maThiSinh = maThiSinh;
 	}
 
@@ -56,6 +66,14 @@ public class ThiSinh {
 
 	public void setSDT(String sDT) {
 		SDT = sDT;
+	}
+
+	public TaiKhoan getTaiKhoan() {
+		return taiKhoan;
+	}
+
+	public void setTaiKhoan(TaiKhoan taiKhoan) {
+		this.taiKhoan = taiKhoan;
 	}
 	
 	

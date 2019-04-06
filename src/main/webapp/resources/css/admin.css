@@ -1,0 +1,33 @@
+.vertical-menu {
+    width: 200px;
+}
+
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+    text-transform: uppercase;
+}
+
+.vertical-menu a.active {
+    background-color: #343a40;
+    border-color: #454d55;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form-group.required label:after {
+    content: " *";
+    color: red;
+}
+
+th {
+    text-transform: uppercase;
+}

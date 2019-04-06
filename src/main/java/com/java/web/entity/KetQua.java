@@ -20,8 +20,14 @@ public class KetQua {
 	@Column(name="NgayLam")
 	private Date ngayLam;
 	
+	@Column(name="SoCauDung")
+	private int soCauDung;
+	
 	@Column(name="DiemThi")
 	private int diemThi;
+	
+	@Column(name="ThoGianNop")
+	private int thoiGianNop;
 	
 	@ManyToOne
 	@JoinColumn(name="MaThiSinh")

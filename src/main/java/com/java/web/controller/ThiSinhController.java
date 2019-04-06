@@ -13,7 +13,7 @@ import com.java.web.entity.ThiSinh;
 import com.java.web.services.ThiSinhServices;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/thisinh")
 public class ThiSinhController {
 	
 	@Autowired
@@ -23,6 +23,6 @@ public class ThiSinhController {
 	public String create(Model model,ModelMap modelMap) {
 		List<ThiSinh> dsThiSinh = thiSinhServices.dsThiSinh();
 		model.addAttribute("dsThiSinh", dsThiSinh);
-		return "thisinh";
+		return "TrangChu";
 	}
 }

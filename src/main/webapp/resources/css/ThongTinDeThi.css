@@ -1,0 +1,17 @@
+.examControl {
+    border: 1px solid #eed3d7;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.examInfo {
+    font-size: 13px;
+}
+body {
+    background-image: url("../img/body.jpg");
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    /* background: linear-gradient(to right, #0062E6, #33AEFF); */
+}

@@ -19,6 +19,12 @@ public class DeThi {
 	@Column(name="TenDeThi")
 	private String tenDeThi;
 	
+	@Column(name="ThoiGian")
+	private int thoiGian;
+	
+	@Column(name="SoCau")
+	private int soCau;
+	
 	@ManyToOne
 	@JoinColumn(name="MaChuDe")
 	private ChuDe maChuDe;
